@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Cardo:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrapper {
+    background-color: #A87C5C;
+}
+
+#main {
+    margin: 0 70px;
+    background-color: #C7D1D4;
+}
+
+#logo img {
+    height: 200px;
+}
+
+#logo {
+    display: flex;
+    flex-direction: row;
+}
+
+h1 {
+    align-content: center;
+    font-family: 'Cinzel Decorative', serif;
+    color: #3C6E71;
+    padding: 15px;
+}
+
+nav {
+    background-color: #3C6E71;
+    width: auto;
+}
+
+p {
+    font-family: 'Cardo', serif;
+}
+
+li {
+    font-family: 'Cardo', serif;
+    display: inline-block;
+}
+
+li a {
+    text-decoration: none;
+    padding: 15px;
+    color: #808C99;
+}
+
+nav {
+    padding: 15px;
+    text-align: right;
+}
+
+#hero-img {
+    background-color: #C7D1D4;
+    padding: 20px;
+}
+
+#hero-img img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+#overview {
+    padding: 15px;
+}
+
+#overview p {
+    color: #A87C5C;
+}
+
+#book-covers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#book-covers img {
+    height: auto;
+    width: 60%;
+    border-radius: 30px;
+    padding: 15px;
+}
+
+#quote-container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    
+}
+
+.quote {
+    background-color: #A87C5C;
+    height: fit-content;
+    width: fit-content;
+    padding: 15px;
+    border-radius: 30px;
+    margin: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+    
+    #book-covers {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+    }
+
+    #book-covers img {
+        max-width: 280px;
+    }
+
+    #quote-container {
+        padding: 15px;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .quote {
+        background-color: #A87C5C;
+        height: fit-content;
+        width: fit-content;
+        padding: 15px;
+    }
+}
