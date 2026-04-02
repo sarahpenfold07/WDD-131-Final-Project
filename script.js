@@ -85,41 +85,56 @@ const quoteInfo = [
 ];
 
 const quoteContent = document.getElementById('quote-container')
-const covers = document.getElementById('book-covers')
-const btn = document.querySelector('button')
+const quoteBox = document.getElementById('quote');
+const quoteContext = document.getElementById('context');
+const quoteMeaning = document.getElementById('meaning');
 
-let currentIndex = 0
+const btns = document.querySelectorAll(".book-button");
 
-btn.addEventListener("click", () => {
-    const randomIndex = Math.floor(Math.random() * quoteInfo.length); 
-    
-    return(randomIndex);
+btns.forEach(btn => {
+    btn.addEventListener("click", () => {
+        
+        const bookName = btn.textContent
+        const bookQuotes = quoteInfo.filter(q => q.book === bookName);
+        const randomIndex = Math.floor(Math.random() * bookQuotes.length); 
+        
+
+        showQuote(bookQuotes, randomIndex);
+
+    });
+
 });
 
+function showQuote(filteredList, randomIndex) {
 
-function showQuote(randomIndex) {
+    quoteContent.textContent = '';
 
-    quoteContent.innerHTML = "";
+    const quoteBox = document.createElement('div');
+    const quoteContext = document.createElement('div');
+    const quoteMeaning = document.createElement('div');
+    const quote = filteredList[randomIndex];
+    quoteBox.classList.add('quote');
+    quoteContext.classList.add('context');
+    quoteMeaning.classList.add('meaning');
 
-    const quote = quoteInfo[randomIndex];
-    const quotes = document.createElement('div');
-    quotes.classList.add('quote');
+    quoteBox.textContent = quote.bookQuote;
+    quoteContext.textContent = quote.context;
+    quoteMeaning.textContent = quote.meaning;
 
-    quotes.innerHTML = `
-        <section class="quote">
-            <p>${quoteInfo.bookQuote}</p>
-        </section>
-        <section class="quote">
-            <p>${quoteInfo.context}</p>
-        </section>
-        <section class="quote">
-            <p>${quoteInfo.meaning}</p>
-        </section>
+    quoteContent.appendChild(quoteBox);
+    quoteContent.appendChild(quoteContext);
+    quoteContent.appendChild(quoteMeaning);
+
+    quoteContent.innerHTML = `
+        <div class="quote">
+            <p>${quote.bookQuote}</p>
+        </div>
+        <div class="context">
+            <p>${quote.context}</p>
+        </div>
+        <div class="meaning">
+            <p>${quote.meaning}</p>
+        </div>
     `;
-
-    quoteContent.appendChild(quotes);
-
-    return quote
 };
 
-showQuote()
