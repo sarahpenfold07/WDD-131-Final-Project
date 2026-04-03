@@ -14,42 +14,36 @@
                 <img src="../images/logo.png" alt="Remnant Chronicles logo">
                 <h1>Remnant Chronicles</h1>
             </section>
-            <nav>
+            <nav aria-label="Main navigation">
                 <ul>
                     <li><a href="home.html">Home</a></li>
-                    <li><a href="character.html">Character</a></li>
+                    <li><a href="character.html" aria-current="page">Character</a></li>
                     <li><a href="book_summary.html">Book Summary</a></li>
                 </ul>
             </nav>
             
         <section id="hero-img">
-            <img src="../images/map.jpg" alt="Remnant Chronicles map">
+            <img src="../images/map_edited.jpg" alt="Remnant Chronicles map">
         </section>
 
         <section id="overview">
-            <p>
-                The The Remnant Chronicles by Mary E. Pearson features characters who are complex, morally conflicted, and shaped by the political tensions between their kingdoms. Rather than simple heroes or villains, many characters struggle between duty, loyalty, and personal feelings. Characters like Princess Arabella Celestine Idris Jezelia (Lia), Kaden, and Prince Rafe often hide their true identities or motives, creating tension and mystery as the story unfolds. The series emphasizes strong character growth, especially as individuals are forced to confront war, betrayal, love, and leadership. Overall, the characters tend to be resilient, determined, and deeply human, balancing moments of vulnerability with courage as they navigate a dangerous and politically divided world.
-            </p>
+            <p></p>
         </section>
 
-        <section id="book-covers">
-            <img src="../images/kaden.png" alt="Kiss of Deception book cover">
+        <section id="book-covers" aria-label="Book covers">
+            <img src="../images/kaden.webp" alt="Kiss of Deception book cover">
             <img src="../images/lias_kavah.webp" alt="Heart of Betrayal book cover">
             <img src="../images/lia_rafe.webp" alt="Beauty of Darkness book cover">
         </section>
 
         <section id="button-container">
-            <button class="book-button">Kaden</button>
-            <button class="book-button">Lia</button>
-            <button class="book-button">Rafe</button>
+            <button class="character-button"></button>
+            <button class="character-button"></button>
+            <button class="character-button"></button>
         </section>
         
 
-        <div id="summary-info-container">
-            <div id="plot"></div>
-            <div id="love-triangle"></div>
-            <div id="theme"></div>
-        </div>
+        <div id="character-info-container" role="region" aria-labelledby="overview"></div>
     </section>
 
     <section id="footer"></section>

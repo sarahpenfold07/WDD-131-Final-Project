@@ -33,10 +33,17 @@ const books = [
     }
 ];
 
-
 const header = [
     {
         "overview": "The Remnant Chronicles follows Princess Lia of Morrighan, who flees her unwanted political wedding only to find herself pursued by both the jilted Prince and a deadly Assassin, neither of whose identities she knows, as they all cross paths in a remote village. After a compelling deception and a tragic betrayal, Lia is captured and brought to the enemy kingdom of Venda, where she must navigate the dangerous court of the Komizar while wrestling with the truth of her own secret 'Gift' of sight and the two men who love her. The series culminates in an epic confrontation where Lia must embrace her destiny and unite the fractured kingdoms against a rising tide of ancient prophecy and war to save her people and forge a new future for the Remnant world."
+    }
+];
+
+const buttons = [
+    {
+        btn1: "Kiss of Deception",
+        btn2: "Heart of Betrayal",
+        btn3: "Beauty of Darkness"
     }
 ];
 
@@ -54,6 +61,19 @@ header.forEach((top) => {
 headerContent.innerHTML = headerHTML
 
 
+const btnHome = document.getElementById('button-container');
+
+let buttonsHTML = ''
+
+buttons.forEach((btn) => {
+    buttonsHTML +=`
+        <button class="book-button">${btn.btn1}</button>
+        <button class="book-button">${btn.btn2}</button>
+        <button class="book-button">${btn.btn3}</button>
+    `
+})
+
+btnHome.innerHTML = buttonsHTML
 
 
 const summaryInfo = document.getElementById('summary-info-container');
@@ -89,7 +109,6 @@ function showSummary(filteredList) {
     loveBox.classList.add('love');
     themeBox.classList.add('theme');
 
-    summaryInfo.appendChild(plotBox)
     
     summaryInfo.innerHTML = `
         <div class="plot">

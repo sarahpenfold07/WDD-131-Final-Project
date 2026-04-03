@@ -7,16 +7,16 @@
 }
 
 #wrapper {
-    background-color: #A87C5C;
+    background-color: #8a4f2d;
 }
 
 #main {
     margin: 0 70px;
-    background-color: #C7D1D4;
+    background-color: #F2F6F8;
 }
 
 #logo img {
-    height: 100px;
+    width: 15%;
 }
 
 #logo {
@@ -27,13 +27,15 @@
 h1 {
     align-content: center;
     font-family: 'Cinzel Decorative', serif;
-    color: #3C6E71;
+    color: #1f4f52;
     padding: 15px;
 }
 
 nav {
-    background-color: #3C6E71;
+    background-color: #1f4f52;
     width: auto;
+    padding: 15px;
+    text-align: right;
 }
 
 p {
@@ -48,22 +50,17 @@ li {
 li a {
     text-decoration: none;
     padding: 15px;
-    color: #808C99;
-}
-
-nav {
-    padding: 15px;
-    text-align: right;
+    color: #F2F6F8;
 }
 
 #hero-img {
-    background-color: #C7D1D4;
+    background-color: #F2F6F8;
     padding: 20px;
 }
 
 #hero-img img {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
 }
 
@@ -72,7 +69,7 @@ nav {
 }
 
 #overview p {
-    color: #A87C5C;
+    color: #8a4f2d;
 }
 
 #book-covers {
@@ -93,7 +90,8 @@ nav {
     margin: 15px auto;
     padding: 15px;
     border-radius: 20px;
-    background-color: #3C6E71;
+    background-color: #1f4f52;
+    color:#F2F6F8;
 }
 
 #quote-container {
@@ -102,14 +100,15 @@ nav {
     padding: 15px;
 }
 
-.quote, .context, .meaning, .plot, .love, .theme {
-    background-color: #A87C5C;
+.quote, .context, .meaning, .plot, .love, .theme, .identity, .origin, .skills, .personality {
+    background-color: #8a4f2d;
     height: fit-content;
     width: fit-content;
     padding: 15px;
     border-radius: 30px;
     margin: 15px auto;
     text-align: center;
+    color: #f2d498;
 }
 
 @media screen and (min-width: 1024px) {
@@ -120,8 +119,7 @@ nav {
     }
 
     #logo img {
-        height: 300px;
-        
+        width: 20%;
     }
 
     #book-covers {
@@ -145,14 +143,15 @@ nav {
     }
 
 
-    .quote, .context, .meaning, .plot, .love, .theme {
-        background-color: #A87C5C;
+    .quote, .context, .meaning, .plot, .love, .theme, .identity, .origin, .skills, .personality  {
+        background-color: #8a4f2d;
         height: fit-content;
         width: fit-content;
         padding: 15px;
         margin: 10px;
         border-radius: 20px;
         text-align: center;
+        color: #f2d498;
     }
 
 }

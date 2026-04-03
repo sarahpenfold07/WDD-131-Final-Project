@@ -65,3 +65,103 @@ const characters = [
 }
 ];
 
+const header = [
+    {
+        "overview": "The The Remnant Chronicles by Mary E. Pearson features characters who are complex, morally conflicted, and shaped by the political tensions between their kingdoms. Rather than simple heroes or villains, many characters struggle between duty, loyalty, and personal feelings. Characters like Princess Arabella Celestine Idris Jezelia (Lia), Kaden, and Prince Rafe often hide their true identities or motives, creating tension and mystery as the story unfolds. The series emphasizes strong character growth, especially as individuals are forced to confront war, betrayal, love, and leadership. Overall, the characters tend to be resilient, determined, and deeply human, balancing moments of vulnerability with courage as they navigate a dangerous and politically divided world."
+    }
+];
+
+
+const buttons = [
+    {
+        btn1: "Kaden",
+        btn2: "Lia",
+        btn3: "Rafe"
+    }
+];
+
+
+const headerContent = document.getElementById('overview')
+
+let headerHTML = ''
+
+header.forEach((top) => {
+    headerHTML += `
+        <p>${top.overview}</p>
+    `
+});
+
+headerContent.innerHTML = headerHTML
+
+
+
+const btnHome = document.getElementById('button-container');
+
+let buttonsHTML = ''
+
+buttons.forEach((btn) => {
+    buttonsHTML +=`
+        <button class="book-button">${btn.btn1}</button>
+        <button class="book-button">${btn.btn2}</button>
+        <button class="book-button">${btn.btn3}</button>
+    `
+})
+
+btnHome.innerHTML = buttonsHTML
+
+
+const summaryInfo = document.getElementById('character-info-container');
+const identityBox = document.getElementById('identity');
+const originBox = document.getElementById('origin');
+const skillsBox = document.getElementById('skills');
+const personBox = document.getElementById('personality')
+
+const btns2 = document.querySelectorAll('.book-button')
+
+btns2.forEach(btn2 => {
+    btn2.addEventListener("click", () => {
+        
+        const characterName = btn2.textContent
+        const charactersInfo = characters.find(q => q.name === characterName);
+        
+
+        showCharacters(charactersInfo);
+    
+    });
+
+});
+
+function showCharacters(filteredList) {
+
+    const identityBox = document.createElement('div');
+    const originBox = document.createElement('div');
+    const skillsBox = document.createElement('div');
+    const personBox = document.createElement('div');
+
+    const info = filteredList
+
+
+    identityBox.classList.add('identity');
+    originBox.classList.add('origin');
+    skillsBox.classList.add('skills');
+    personBox.classList.add('personality')
+
+    
+    summaryInfo.innerHTML = `
+        <div class="identity">
+            <p>${info.identity}</p>
+        </div>
+        <div class="origin">
+            <p>${info.origin}</p>
+        </div>
+        <div class="skills">
+            <p>${info.skills.join(', ')}</p>
+        </div>
+        <div class="personality">
+        <p>${info.personality.join(', ')}</p>
+        </div>
+    `;
+};
+
+
+

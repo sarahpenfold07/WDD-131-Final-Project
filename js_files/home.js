@@ -94,7 +94,7 @@ const buttons = [
     {
         btn1: "Kiss of Deception",
         btn2: "Heart of Betrayal",
-        btn3: "Beaity of Darkness"
+        btn3: "Beauty of Darkness"
     }
 ];
 
