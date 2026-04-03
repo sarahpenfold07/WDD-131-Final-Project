@@ -93,7 +93,7 @@ const header = [
 const buttons = [
     {
         btn1: "Kiss of Deception",
-        btn2: "Heart of Betryal",
+        btn2: "Heart of Betrayal",
         btn3: "Beaity of Darkness"
     }
 ];
