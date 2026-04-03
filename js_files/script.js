@@ -84,7 +84,48 @@ const quoteInfo = [
     }
 ];
 
-const quoteContent = document.getElementById('quote-container')
+const header = [
+    {
+        "overview": "In the The Remnant Chronicles by Mary E. Pearson, quotes often reveal deeper themes about identity, trust, and personal choice. Many quotes reflect how characters struggle between the roles society expects them to play and the people they truly want to become. Through characters like Princess Arabella Celestine Idris Jezelia (Lia), Kaden, and Prince Rafe, the series shows that loyalty, courage, and compassion are often tested during times of conflict. Overall, quotes from the series usually highlight important lessons about questioning tradition, finding inner strength, and making difficult decisions even when the consequences are uncertain."
+    }
+];
+
+const buttons = [
+    {
+        btn1: "Kiss of Deception",
+        btn2: "Heart of Betryal",
+        btn3: "Beaity of Darkness"
+    }
+];
+
+const headerContent = document.getElementById('overview')
+
+let headerHTML = ''
+
+header.forEach((top) => {
+    headerHTML += `
+        <p>${top.overview}</p>
+    `
+});
+
+headerContent.innerHTML = headerHTML
+
+
+const btnHome = document.getElementById('button-container');
+
+let buttonsHTML = ''
+
+buttons.forEach((btn) => {
+    buttonsHTML +=`
+        <button class="book-button">${btn.btn1}</button>
+        <button class="book-button">${btn.btn2}</button>
+        <button class="book-button">${btn.btn3}</button>
+    `
+})
+
+btnHome.innerHTML = buttonsHTML
+
+const quoteContent = document.getElementById('quote-container');
 const quoteBox = document.getElementById('quote');
 const quoteContext = document.getElementById('context');
 const quoteMeaning = document.getElementById('meaning');
@@ -100,7 +141,7 @@ btns.forEach(btn => {
         
 
         showQuote(bookQuotes, randomIndex);
-
+    
     });
 
 });
@@ -113,6 +154,7 @@ function showQuote(filteredList, randomIndex) {
     const quoteContext = document.createElement('div');
     const quoteMeaning = document.createElement('div');
     const quote = filteredList[randomIndex];
+
     quoteBox.classList.add('quote');
     quoteContext.classList.add('context');
     quoteMeaning.classList.add('meaning');
@@ -121,9 +163,6 @@ function showQuote(filteredList, randomIndex) {
     quoteContext.textContent = quote.context;
     quoteMeaning.textContent = quote.meaning;
 
-    quoteContent.appendChild(quoteBox);
-    quoteContent.appendChild(quoteContext);
-    quoteContent.appendChild(quoteMeaning);
 
     quoteContent.innerHTML = `
         <div class="quote">
@@ -137,4 +176,3 @@ function showQuote(filteredList, randomIndex) {
         </div>
     `;
 };
-

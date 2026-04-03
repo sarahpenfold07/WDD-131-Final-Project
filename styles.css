@@ -16,12 +16,12 @@
 }
 
 #logo img {
-    height: 200px;
+    height: 100px;
 }
 
 #logo {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 h1 {
@@ -102,17 +102,28 @@ nav {
     padding: 15px;
 }
 
-.quote, .context, .meaning {
+.quote, .context, .meaning, .plot, .love, .theme {
     background-color: #A87C5C;
     height: fit-content;
     width: fit-content;
     padding: 15px;
     border-radius: 30px;
     margin: 15px auto;
+    text-align: center;
 }
 
 @media screen and (min-width: 1024px) {
-    
+
+    #logo {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #logo img {
+        height: 300px;
+        
+    }
+
     #book-covers {
         display: flex;
         justify-content: center;
@@ -123,17 +134,18 @@ nav {
         max-width: 280px;
     }
 
-    .book-button {
-        flex-direction: row;
+    #button-container {
+        display: flex;
+        gap: 10px;
     }
 
-    #quote-container {
-        padding: 15px;
+    #quote-container, #summary-info-container {
         display: flex;
         flex-direction: row;
     }
 
-    .quote, .context, .meaning {
+
+    .quote, .context, .meaning, .plot, .love, .theme {
         background-color: #A87C5C;
         height: fit-content;
         width: fit-content;
@@ -144,3 +156,7 @@ nav {
     }
 
 }
+
+
+
+
