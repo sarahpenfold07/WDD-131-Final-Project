@@ -39,6 +39,24 @@ const header = [
     }
 ];
 
+
+const title = [
+    {
+        "bookSummaryTitle": "Book Summaries"
+    }
+];
+
+
+const nav = [
+    {
+        nav1: "Home", 
+        nav2: "Character", 
+        nav3: "Book Summary"
+    }
+];
+
+
+
 const buttons = [
     {
         btn1: "Kiss of Deception",
@@ -47,6 +65,34 @@ const buttons = [
     }
 ];
 
+
+
+const titleContent = document.querySelector('#logo h1');
+
+let titleHTML = ''
+
+title.forEach((bookSummaryH1) => {
+    titleHTML += `
+        <h1>${bookSummaryH1.bookSummaryTitle}</h1>
+    `
+})
+
+titleContent.innerHTML = titleHTML
+
+
+const navContent = document.querySelector('nav ul');
+
+let navHTML = ''
+
+nav.forEach((bookSummaryNav) => {
+    navHTML += `
+        <li><a href="home.html">${bookSummaryNav.nav1}</a></li>
+        <li><a href="character.html">${bookSummaryNav.nav2}</a></li>
+        <li><a href="book_summary.html">${bookSummaryNav.nav3}</a></li>
+    `;
+});
+
+navContent.innerHTML = navHTML
 
 const headerContent = document.getElementById('overview')
 
@@ -112,14 +158,15 @@ function showSummary(filteredList) {
     
     summaryInfo.innerHTML = `
         <div class="plot">
-            <p>${info.summary}</p>
+            <p><strong>Summary: </strong>${info.summary}</p>
         </div>
         <div class="love">
-            <p>${info.loveTriangle}</p>
+            <p><strong>Love Triangle Development: </strong>${info.loveTriangle}</p>
         </div>
         <div class="theme">
-            <p>${info.themes}</p>
+            <p><strong>Themes: </strong>${info.themes.join(', ')}</p>
         </div>
     `;
 };
+
 

@@ -71,6 +71,20 @@ const header = [
     }
 ];
 
+const title = [
+    {
+        "characterTitle": "Characters"
+    }
+];
+
+const nav = [
+    {
+        nav1: "Home", 
+        nav2: "Character", 
+        nav3: "Book Summary"
+    }
+];
+
 
 const buttons = [
     {
@@ -80,6 +94,34 @@ const buttons = [
     }
 ];
 
+
+
+const titleContent = document.querySelector('#logo h1');
+
+let titleHTML = ''
+
+title.forEach((characterH1) => {
+    titleHTML += `
+        <h1>${characterH1.characterTitle}</h1>
+    `
+});
+
+titleContent.innerHTML = titleHTML
+
+
+const navContent = document.querySelector('nav ul');
+
+let navHTML = ''
+
+nav.forEach((characterNav) => {
+    navHTML += `
+        <li><a href="home.html">${characterNav.nav1}</a></li>
+        <li><a href="character.html">${characterNav.nav2}</a></li>
+        <li><a href="book_summary.html">${characterNav.nav3}</a></li>
+    `;
+});
+
+navContent.innerHTML = navHTML
 
 const headerContent = document.getElementById('overview')
 
@@ -149,16 +191,16 @@ function showCharacters(filteredList) {
     
     summaryInfo.innerHTML = `
         <div class="identity">
-            <p>${info.identity}</p>
+            <p><strong>Identity: </strong>${info.identity}</p>
         </div>
         <div class="origin">
-            <p>${info.origin}</p>
+            <p><strong>Origin: </strong>${info.origin}</p>
         </div>
         <div class="skills">
-            <p>${info.skills.join(', ')}</p>
+            <p><strong>Skills: </strong>${info.skills.join(', ')}</p>
         </div>
         <div class="personality">
-        <p>${info.personality.join(', ')}</p>
+        <p><strong>Personality: </strong>${info.personality.join(', ')}</p>
         </div>
     `;
 };

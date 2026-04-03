@@ -90,6 +90,22 @@ const header = [
     }
 ];
 
+
+const title = [
+    {
+        "homeTitle": "Remnant Chronicles"
+    }
+];
+
+const nav = [
+    {
+        nav1: "Home", 
+        nav2: "Character", 
+        nav3: "Book Summary"
+    }
+];
+
+
 const buttons = [
     {
         btn1: "Kiss of Deception",
@@ -97,6 +113,36 @@ const buttons = [
         btn3: "Beauty of Darkness"
     }
 ];
+
+
+
+const titleContent = document.querySelector('#logo h1');
+
+let titleHTML = ''
+
+title.forEach((homeH1) => {
+    titleHTML += `
+        <h1>${homeH1.homeTitle}</h1>
+    `
+})
+
+titleContent.innerHTML = titleHTML
+
+
+const navContent = document.querySelector('nav ul');
+
+let navHTML = ''
+
+nav.forEach((homeNav) => {
+    navHTML += `
+        <li><a href="home.html">${homeNav.nav1}</a></li>
+        <li><a href="character.html">${homeNav.nav2}</a></li>
+        <li><a href="book_summary.html">${homeNav.nav3}</a></li>
+    `;
+});
+
+navContent.innerHTML = navHTML
+
 
 const headerContent = document.getElementById('overview')
 
@@ -166,13 +212,13 @@ function showQuote(filteredList, randomIndex) {
 
     quoteContent.innerHTML = `
         <div class="quote">
-            <p>${quote.bookQuote}</p>
+            <p><strong>Quote: </strong>${quote.bookQuote}</p>
         </div>
         <div class="context">
-            <p>${quote.context}</p>
+            <p><strong>Context: </strong>${quote.context}</p>
         </div>
         <div class="meaning">
-            <p>${quote.meaning}</p>
+            <p><strong>Meaning: </strong>${quote.meaning}</p>
         </div>
     `;
 };
